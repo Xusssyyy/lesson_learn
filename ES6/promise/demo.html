@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const posts = [
+            {title:'I love Javascript',author:'小罗',id:1},
+            {title:'CSS',author:'小许',id:2}
+        ];
+
+        // post.push({
+        //     title:'Dev tool webback',
+        //     author:'CEO',
+        //     id:'3'
+        // })
+
+        const authors = [
+            {name:'小罗',hometown:'上饶',bio:'冲冲冲'}
+        ]
+        // console.log(JSON.stringify(posts));
+        // localStorage.setItem('posts',JSON.stringify(posts));
+        function getPostById(id){
+            // 根据id找到文章
+            const post = posts.find(post=>post.id===id);
+            const { author } = post;
+            console.log(authors.find(item=>item.name==author));
+            return post;
+        }
+        console.log(getPostById(1));
+    </script>
+</body>
+</html>
