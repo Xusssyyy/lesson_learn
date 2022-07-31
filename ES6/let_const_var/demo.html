@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //const let 更好，var挂载到window上会污染window
+        //var声明的变量会有变量的定义提升，提升到作用域的顶部区，但值不会提升
+        //const let 不支持变量的提升
+        console.log(a);
+        console.log(fn);//函数也会变量提升，值也会提升
+        var a ='11';
+        const pizza = '胡萝卜牛肉';
+        console.log(pizza);
+        function fn(){
+            console.log('fn');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let a = 1;
+    {
+        var b = 3;
+        let a = 2;
+        const name = '许圣远';
+        //当前作用域有a，就可以输出a
+        //当前作用域无d，继续往外查找       
+        console.log(name,a,d);
+    }
+    
+    //1.全局作业域 window
+    //2.局部作用域 函数&块级作用域
+    </script>
+</body>
+</html>
