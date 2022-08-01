@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="userTable">
+        <tr>
+            <td>名字</td>
+            <td>家乡</td>
+            <td>城市</td>
+            <td>工作</td>
+        </tr>
+    </table>
+    <script>
+        //如何把对象显示在页面上
+        const person = {
+            name:'许圣远',
+            hometown:'南昌',
+            city:'南昌',
+            job:'WEB developer'
+        }
+        //DOM  js通向HTML世界的编程
+       const tableElement = document.querySelector('#userTable');
+       tableElement.innerHTML +=`<tr>
+        <td>${person.name}</td>
+        <td>${person.hometown}</td>
+        <td>${person.city}</td>
+        <td>${person.job}</td>
+        </tr>`
+    </script>
+</body>
+</html>
