@@ -5,7 +5,7 @@ var ctx = canvas.getContext("2d")
 var particlesArray = []
 var count = 2000
 var img = new Image()
-img.src = "rrr.jpg"
+img.src = "buildings-1245953_1280.jpg"
 
 class Particle {
     constructor() {
