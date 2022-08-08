@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数在内存中其实是独立的
+        //{}堆内存，引用关系
+        //obj栈内存 obj全局变量 内存地址
+        //匿名函数 在独立的堆内存中，申请obj.foo->引用关系
+        var obj = {
+            bar:1,
+            foo:function(){
+                console.log(this);
+            }
+        }
+        // foo存的是一个地址，指向了函数所在
+        var foo = obj.foo;//函数体
+        obj.foo();
+        foo();
+    </script>
+</body>
+</html>
