@@ -1,0 +1,15 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "- 石头剪刀布怎么玩\r     选择协议\r     双方都可以相互通信，发送接收信息TCP/IP连接  websocket协议\r - 和电脑来玩  应用层",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
