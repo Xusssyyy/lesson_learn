@@ -1,4 +1,5 @@
 - event loop   event内置type key touch
+
 - 自定义事件
     - 自定义任何类型的事件，并且使用emit触发回调
     - EventEmitter构造函数中使用Map作为存储的容器
