@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #01050D;
+}
+.moon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgb(219, 207, 175);
+    box-shadow: 0 0 60px #F5FFFA;
+    position: absolute;
+    left: 80%;
+    top: 140px;
+    animation: myMoon 3s linear;
+}
+@keyframes myMoon {
+    0% {
+        left: 78%;
+        top: 130px;
+        opacity: 0;
+    }
+    10% {
+        left: 78.2%;
+        top: 131px;
+        opacity: 0.1;
+    }
+    20% {
+        left: 78.4%;
+        top: 132px;
+        opacity: 0.2;
+    }
+    30% {
+        left: 78.6%;
+        top: 133px;
+        opacity: 0.3;
+    }
+    40% {
+        left: 78.8%;
+        top: 134px;
+        opacity: 0.4;
+    }
+    50% {
+        left: 79%;
+        top: 135px;
+        opacity: 0.5;
+    }
+    60% {
+        left: 79.2%;
+        top: 136px;
+        opacity: 0.6;
+    }
+    70% {
+        left: 79.4%;
+        top: 137px;
+        opacity: 0.7;
+    }
+    80% {
+        left: 79.6%;
+        top: 138px;
+        opacity: 0.8;
+    }
+    90% {
+        left: 79.8%;
+        top: 139px;
+        opacity: 0.9;
+    }
+    100% {
+        left: 80%;
+        top: 140px;
+        opacity: 1;
+    }
+}
+
+.stars{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.stars span{
+    display: inline-block;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    transform: rotate(45deg);
+    /* 使星星模糊一点 */
+    opacity: 0.2;
+    /* 动画名称 动画时间  速度  开始时间 次数 */
+    animation: blinking 1s linear infinite;
+}
+/* blinking : 闪烁 */
+@keyframes blinking{
+    0%,100%{
+      opacity: 0.2;
+    }
+    50%{
+      /* 星星大小放大2倍 ，旋转45度成菱形 */
+      transform: scale(2) rotate(45deg);
+      opacity: 1;
+    }
+}
+.stars span:nth-child(1){
+    top: 10%;
+    left: 10%;
+}
+.stars span:nth-child(2){
+    top: 20%;
+    left: 20%;
+}
+.stars span:nth-child(3){
+    top: 30%;
+    left: 30%;
+}
+.stars span:nth-child(4){
+    top: 40%;
+    left: 40%;
+}
+.stars span:nth-child(5){
+    top: 45%;
+    left: 60%;
+}
+.stars span:nth-child(6){
+    top: 30%;
+    left: 80%;
+}
+.stars span:nth-child(7){
+    top: 40%;
+    left: 20%;
+}
+.stars span:nth-child(8){
+    top: 50%;
+    left: 40%;
+}
+.stars span:nth-child(9){
+    top: 60%;
+    left: 70%;
+}
+.stars span:nth-child(10){
+    top: 80%;
+    left: 50%;
+}
+.stars span:nth-child(11){
+    top: 75%;
+    left: 20%;
+}
+.stars span:nth-child(12){
+    top: 55%;
+    left: 4%;
+}
+.stars span:nth-child(13){
+    top: 36%;
+    left: 26%;
+}
+.stars span:nth-child(14){
+    top: 90%;
+    left: 10%;
+}
+.stars span:nth-child(15){
+    top: 55%;
+    left: 70%;
+}
+.stars span:nth-child(16){
+    top: 60%;
+    left: 80%;
+}
+.stars span:nth-child(17){
+    top: 5%;
+    left: 75%;
+}
+.stars span:nth-child(18){
+    top: 15%;
+    left: 60%;
+}
