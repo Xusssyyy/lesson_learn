@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.progress {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+}
+.progress .wrapper-circle {
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.progress .circle {
+    border-radius: 50%;
+    width: 88px;
+    height: 88px;
+}
+.progress .left .circle {
+    float: left;
+    border: 6px solid skyblue;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    animation: left_cirlce 5s linear infinite;
+}
+.progress .right .circle {
+    float: right;
+    border: 6px solid skyblue;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    animation: right_cirlce 5s linear infinite;
+}
+@keyframes left_cirlce {
+    0%,50% {
+      transform: rotate(-45deg);
+    }
+    100%{
+      transform: rotate(135deg); 
+    }
+}
+@keyframes right_cirlce {
+    0% {
+      transform: rotate(45deg);
+    }
+    50%,100%{
+      transform: rotate(225deg); 
+    }
+}
