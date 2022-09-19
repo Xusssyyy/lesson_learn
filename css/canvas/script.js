@@ -5,8 +5,16 @@ var ctx = canvas.getContext("2d")
 var particlesArray = []
 var count = 2000
 var img = new Image()
-img.src = "buildings-1245953_1280.jpg"
+img.src = "https://tse4-mm.cn.bing.net/th/id/OIP-C.JKiWIBjROMmLPNgSydCWWAHaEo?w=173&h=108&c=7&r=0&o=5&dpr=2&pid=1.7"
+// var imgW = '';
+// var imgH = '';
 
+// imgObj.onload = function() {
+//     imgW = imgObj.width;
+//     imgH = imgObj.height;
+//     var ctx7 = c7.getContext("2d");
+//     ctx7.drawImage(this,0,0,cW,imgH*cW/imgW)
+// }
 class Particle {
     constructor() {
         this.x = Math.random() * canvas.width
