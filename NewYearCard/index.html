@@ -1,54 +1,51 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title>Contact Form</title>
-	<!--[if IE]><script>
-	$(document).ready(function() { 
+  <head>
+    <meta charset="utf-8" />
+    <title>Contact Form</title>
 
-$("#form_wrap").addClass('hide');
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-})
+  <body style="margin-top: 60px">
+    <div id="wrap">
+      <h1></h1>
+      <div id="form_wrap">
+        <form>
+          <p>新春快乐</p>
+          <label for="name">发件人: </label>
+          <input type="text" name="name" value="" id="from" />
+          <label for="name">收件人: </label>
+          <input type="text" name="to" value="" id="to" />
+          <label for="email">您的祝福 : </label>
+          <textarea name="message" value="Your Message" id="message"></textarea>
+          <p></p>
+          <button id="ok">已完成，可发送</button>
+        </form>
+      </div>
+    </div>
+    <div
+      style="position: fixed; height: 90px; width: 100%; left: 0; bottom: 10px"
+    >
+      <div class="footer-banner" style="width: 728px; margin: 0px auto"></div>
+    </div>
+  </body>
 
-</script><![endif]-->
-
-<link rel="stylesheet" href="./style.css">
-</head>
-
-<body style="margin-top: 60px">
-	<div id="wrap">
-		<h1></h1>
-		<div id='form_wrap'>
-			<form>
-				<p>敬过往-祈新年</p>
-				<label for="name">发件人: </label>
-				<input type="text" name="name" value="" id="from" />
-				<label for="name">收件人: </label>
-				<input type="text" name="to" value="" id="to" />
-				<label for="email">您的祝福 : </label>
-				<textarea  name="message" value="Your Message" id="message" ></textarea>
-				<p></p>			
-				<button id="ok">已完成，可发送</button>
-			</form>
-		</div>
-	</div>
-<div style="position:fixed;height:90px;width:100%;left:0;bottom:10px"><div class="footer-banner" style="width:728px; margin:0px auto"></div></div>	
-</body>
-
-<script>        
-    var btn1 = document.getElementById('ok');    
-    var fm = document.getElementById('from');
-    var to = document.getElementById('to'); 
-    var message = document.getElementById('message');
-	btn1.onclick = function(){
-		if(fm.value==null||fm.value=='')  alert("请填写发件人");
-		else if(to.value==null||to.value=='')  alert("请填写收件人");
-		else if(message.value==null||message.value=='')  alert("请填写祝福语");
-		else {
-			var r = confirm("确定检查无误吗？");
-			if(r==true) window.location.href="https://www.baidu.com/?tn=22073068_oem_dg";
-		}
-	}
-</script>
+  <script>
+    var btn1 = document.getElementById("ok");
+    var fm = document.getElementById("from");
+    var to = document.getElementById("to");
+    var message = document.getElementById("message");
+    btn1.onclick = function () {
+      if (fm.value == null || fm.value == "") alert("请填写发件人");
+      else if (to.value == null || to.value == "") alert("请填写收件人");
+      else if (message.value == null || message.value == "")
+        alert("请填写祝福语");
+      else {
+        var r = confirm("确定检查无误吗？");
+        if (r == true)
+          window.location.href = "https://www.baidu.com/?tn=22073068_oem_dg";
+      }
+    };
+  </script>
 </html>
