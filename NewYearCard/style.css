@@ -17,7 +17,6 @@ p {
 body {
   background: skyblue;
   color: #7c7873;
-  font-family: 华文行楷, Arial, Lucida Grande, Tahoma, sans-serif;
 }
 p {
   text-shadow: 0 1px 0 #fff;
@@ -25,6 +24,7 @@ p {
   margin: 30px auto 10px;
   font-family: 华文行楷, Arial, Lucida Grande, Tahoma, sans-serif;
 }
+
 #wrap {
   width: 700px;
   margin: -80px auto 0;
@@ -74,7 +74,7 @@ p {
 }
 
 form {
-  background: #f7f2ec url("https://s1.ax1x.com/2023/01/07/pSEzTrn.png");
+  background: #f7f2ec url("https://s1.ax1x.com/2023/01/10/pSmksij.jpg");
   background-size: 100%;
   position: relative;
   top: 250px;
@@ -111,7 +111,7 @@ label {
 input[type="text"],
 textarea {
   font: 20px normal normal uppercase helvetica, arial, serif;
-  color: #7c7873;
+  color: #000;
   background: none;
   width: 100%;
   height: 36px;
@@ -206,73 +206,4 @@ input[type="text"]:focus {
   background-color: lightskyblue;
   color: #fff;
   border: 0;
-}
-.dialog {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-  opacity: 0;
-  transition: all 0.3s;
-}
-.dialog.show {
-  display: block;
-}
-.dialog.appear {
-  opacity: 1;
-}
-.dialog .main {
-  width: 60%;
-  background-color: #fff;
-  margin: 30px auto;
-  padding: 16px;
-  border-radius: 6px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: all 0.3s;
-}
-.dialog.appear .main {
-  transform: translateY(40px);
-  opacity: 1;
-}
-.dialog .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-}
-.dialog .header .close {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  border: none;
-  background-color: #fff;
-  padding: 8px;
-  cursor: pointer;
-}
-.dialog .header .close::before,
-.dialog .header .close::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 15px;
-  height: 1px;
-  background-color: #333;
-  transform: rotate(45deg);
-}
-.dialog .header .close::after {
-  transform: rotate(-45deg);
-}
-.dialog .footer {
-  display: flex;
-  justify-content: flex-end;
-}
-.dialog .footer .button {
-  margin-left: 10px;
 }
