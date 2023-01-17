@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-color:rgba(30,128,255,0.2);
+    overflow: hidden;
+}
+span{
+    position: absolute;
+    background: url('https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/6c61ae65d1c41ae8221a670fa32d05aa.svg');
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    animation: animate 3s linear ;
+    width: 160px; 
+    height: 160px;
+    background-size: cover;
+}
+@keyframes animate {
+    0%{
+        transform: translate(-50%,-50%);
+        opacity: 1;
+        filter:hue-rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-1000%);
+        opacity: 0;
+        filter:hue-rotate(270deg);
+    }
+}

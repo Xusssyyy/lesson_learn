@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>稀土掘金漫天飞舞</title>
+    <link rel="stylesheet" href="./style.css">    
+</head>
+<body>
+   <script>
+    document.addEventListener('mousemove',(e)=>{
+        let body = document.querySelector('body')
+        let juejin = document.createElement('span')
+        let x = e.offsetX
+        let y = e.offsetY
+        juejin.style.left = x + 'px'
+        juejin.style.top = y + 'px'
+        let size = Math.random()*100
+        juejin.style.width = size + 'px'
+        juejin.style.height = size + 'px'
+        body.appendChild(juejin)
+        setTimeout(()=>{
+            juejin.remove()
+        },2000)
+    })
+   </script> 
+</body>
+</html>
