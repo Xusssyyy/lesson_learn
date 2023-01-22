@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="light">
+    <div class="rope"></div>
+    <div class="bulb">
+    </div>
+    <div class="switch">
+      <div class="btn"></div>
+    </div>
+  </div>
+  <script>
+    let btn = document.querySelector('.btn')
+    let body = document.querySelector('body')
+    btn.onclick = function(){
+      body.classList.toggle('on')
+    }
+  </script>
+</body>
+</html>
