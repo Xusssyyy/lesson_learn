@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="clock">
+      <h2>现在是北京时间</h2>
+      <div id="time">
+        <div><span id="hour">00</span><span>Hours</span></div>
+        <div><span id="minutes">00</span><span>Minutes</span></div>
+        <div><span id="seconds">00</span><span>Seconds</span></div>
+      </div>
+    </div>
+    <script>
+        function twoNum(num){
+            return num<10?`0${num}`:num
+        }
+        function clock(){
+            let hours = document.getElementById('hour')
+            let minutes = document.getElementById('minutes')
+            let seconds = document.getElementById('seconds')
+            let h= new Date().getHours()
+            let m= new Date().getMinutes()
+            let s= new Date().getSeconds()
+            hours.innerHTML=twoNum(h)
+            minutes.innerHTML=twoNum(m)
+            seconds.innerHTML=twoNum(s)
+        }
+        setInterval(clock,1000)
+    </script>
+  </body>
+</html>
