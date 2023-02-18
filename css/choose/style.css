@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: skyblue; */
+}
+.rating{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.rating input{
+    display: none;
+}
+.rating label{
+    z-index: 100;
+    position: relative;
+    width: 0;
+    height: 120px;
+    cursor: pointer;
+    transition: 0.5s;
+    filter: grayscale(1);
+    opacity: 0;
+}
+.rating:hover label{
+    width: 160px;
+    opacity: 0.2;
+}
+.rating input:hover + label,
+.rating input:checked + label{
+    filter: grayscale(1);
+    opacity: 1;
+    width: 160px;
+}
+.rating label h4{
+    color: #fff;
+    font-size: 24px;
+    padding-top: 10px;
+    margin-left: 40px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(-50px) scale(0);
+    transition: 0.5s;
+}
+.rating input:hover label h4{
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+}
