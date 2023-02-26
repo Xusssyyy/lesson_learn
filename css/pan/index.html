@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+.wheel-list {
+  width: 600px;
+  height: 600px;
+}
+.wheel-list li {
+  
+}
+</style>
+<body>
+  <ul id="wheel" class="wheel-list" onclick="operation">
+    <li style="transform: rotate(0deg);">
+      <i style="transform: rotate(30deg) skewY(30deg);">
+      </i>
+      <div class="prize">
+        <h3>
+          一等奖
+        </h3>
+        <p>
+          iPhone6 plus
+        </p>
+      </div>
+    </li>
+    <li style="transform: rotate(60deg);">
+      <i style="transform: rotate(30deg) skewY(30deg);">
+      </i>
+      <div class="prize">
+        <h3>
+          再接再厉
+        </h3>
+        <p>
+          呜呜 没有中奖 ...
+        </p>
+      </div>
+    </li>
+    <li style="transform: rotate(120deg);">
+      <i style="transform: rotate(30deg) skewY(30deg);">
+      </i>
+      <div class="prize">
+        <h3>
+          鼓励奖
+        </h3>
+        <p>
+          差一点啊
+        </p>
+      </div>
+    </li>
+    <li style="transform: rotate(180deg);">
+      <i style="transform: rotate(30deg) skewY(30deg);">
+      </i>
+      <div class="prize">
+        <h3>
+          四等奖
+        </h3>
+        <p>
+          特级红富士一个
+        </p>
+      </div>
+    </li>
+    <li style="transform: rotate(240deg);">
+      <i style="transform: rotate(30deg) skewY(30deg);">
+      </i>
+      <div class="prize">
+        <h3>
+          三等奖
+        </h3>
+        <p>
+          iPad mini retina
+        </p>
+      </div>
+    </li>
+    <li style="transform: rotate(300deg);">
+      <i style="transform: rotate(30deg) skewY(30deg);">
+      </i>
+      <div class="prize">
+        <h3>
+          二等奖
+        </h3>
+        <p>
+          iPad Air2
+        </p>
+      </div>
+    </li>
+  </ul>
+</body>
+
+</html>
+
+<script>
+var totalNum = 6 ; // 转盘 总数
+var trunNum = [ 1 , 2 , 3 , 4 , 5 , 6 ]; //概率奖品 编号
+var turntable = [] ; // 随机概率计算
+var isStatr = false ; //锁 专拍没有执行完的时候 不可以再次点击 ;
+var lenCloc = 0 ; //当前第几次计算叠加的度数
+var turn  = 3 ; //转盘旋转最低的圈数
+//开始 function  ran = 随机 
+function operation(ran) {
+  lenCloc++;
+  var Prize = turntable[ran] - 1,
+  sun = turn * 360; //编号  // 度数  //  时间
+  if (Prize >= totalNum) {
+      Prize = 0;
+  }
+  var soBuom = parseInt(Math.floor(Math.random() * 60) - 30);
+      //避免多次出现1等奖 所以要删除 下标 
+  turntable.splice(ran, 1);
+  //旋转度数 = 上次度数+ 最小圈数 * 360 + 当前数字 * 60 +随机角度  = 最终旋转度数
+  wheel.style.transform = "rotate(" + ((lenCloc * sun + Prize * 60) + soBuom) + "deg)";
+  //wheel.style.webkitTransform = "rotate("+((lenCloc*sun+Prize*60)+soBuom)+"deg)";
+  setTimeout(function() {
+      alert("您获得了奖品编号:" + PrizeSon[Prize]);
+      isStatr = false;
+  },
+  3200);
+}
+</script>
