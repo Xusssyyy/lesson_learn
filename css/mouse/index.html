@@ -1,0 +1,219 @@
+<!-- 打周边游戏，类似于小时候的打地鼠游戏，击打中一个得一分。
+在游戏过程中，击打至相应的分数，会有随机内容弹出。
+在游戏结束后，获取至相应分数也会有不同内容。 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打周边</title>
+	<style>
+		body{
+			background-color: #ffb46f ;
+		}
+		.head{
+			align-items: center;
+			margin-bottom: 16px;
+			color:#fadd95;
+			font-size: 20px;
+			font-family:'楷体';
+		}
+		.rule{
+			float: right;
+			color: #b2d0fc;
+			font-size: 16px;
+		}
+		.rule:hover{
+			cursor:pointer;
+		}
+		.box{
+			overflow: hidden;
+			width:390px;
+			border-radius: 10px;
+			margin: 0 auto;
+			background-color: #e37815;
+		}
+		._box{
+			width: 120px;
+			height: 120px;
+			border-radius: 10px;
+			float: left;
+			margin-right:5px;
+			margin-left: 5px;
+			margin-bottom: 10px;
+			background-color: #fdf3f3;
+		}
+		.cursor{
+			width: 390px;
+		}
+		.cursor:hover{
+			cursor:url("https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/946fe607edc9428f8db87c89a49e1820~tplv-k3u1fbpfcp-watermark.image?"),auto
+			/* cursor: url('https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cb66f828dc6d40d1be9e21397fb830ad~tplv-k3u1fbpfcp-watermark.image?'),auto; */
+		}
+		.box label{
+			font-size: 16px;
+			color: #e8f3ff;
+		}
+		.box label input{
+			width: 40px;
+			margin-bottom: 20px;
+			margin-left: 10px;
+			border-radius: 10px;
+		}
+		.box button{
+			margin-left: 15%;
+			width: 110px;
+			height: 50px;
+			border-radius: 25px;
+			background: linear-gradient(180deg,#ffb46f 15.1%,#ef7d13);
+		}
+		.mouse{
+			width: 100%;
+			height: 100%; 
+			background: url("https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8e1b1a33c8c42829e87559b1595d2f0~tplv-k3u1fbpfcp-no-mark:0:0:0:0.image?") no-repeat
+		}
+		.mouse_change{
+			width: 100%;
+			height: 100%;
+			background: url("https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8e1b1a33c8c42829e87559b1595d2f0~tplv-k3u1fbpfcp-no-mark:0:0:0:0.image?") no-repeat
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box">
+		<div class="head">掘金版打周边
+			<div class="rule" onclick="rule()">游戏规则></div>
+		</div>
+		
+		<label>分数:<input type="text" id="score"></label>
+		<label>倒计时:<input type="text" id="timeout"></label>
+
+		<div class="cursor">
+			<div class="_box"></div>
+			<div class="_box"></div>
+			<div class="_box"></div>
+			<div class="_box"></div>
+			<div class="_box"></div>
+			<div class="_box"></div>
+			<div class="_box"></div>
+			<div class="_box"></div>
+			<div class="_box"></div>
+		</div>
+		<button id="start">开始游戏</button><button id="finish">结束游戏</button>
+		<br><br>
+	</div>
+	
+</body>
+<script>
+
+var start = document.getElementById('start');
+var finish = document.getElementById('finish');
+var _boxs = document.getElementsByClassName('_box');
+var score = document.getElementById('score');
+var timeout = document.getElementById('timeout');
+var time,flag=true;
+
+// 规则说明
+function rule(){
+	alert('\n 1.打周边，击中一个记一分 \n 2.在获取相应分数时，会有随机内容弹出 \n 3.在游戏结束后，获取相应分数会有不同奖励 \n 4.快去试试吧，看看自己能到哪一步😎')
+}
+
+/*任意两数之间的随机数*/
+function selectFrom(x,y){
+	var choice = y-x;
+	return Math.floor(Math.random()*choice+x);
+};
+
+var count = 0,mouse = 0;
+/*随机出现周边*/
+start.onclick = function(){
+	score.value = 0;
+	timeout.value = 25;
+	if(flag){
+		time = setInterval(function(){
+			count++;//周边个数
+			var i = selectFrom(0,9);//随机获取第几个格子
+			if(_boxs[i ].innerHTML == ''){
+				_boxs[i ].innerHTML = '<div class="mouse"></div>';
+				setTimeout(function(){
+					_boxs[i ].innerHTML = '';
+				},3000)
+			}
+			timeout.value = parseInt(timeout.value)-1;//倒计时
+			if(timeout.value == 0){
+				alert('时间到,您得分为：'+score.value+'分！');
+				if(score.value<15){
+					alert('这么低的分，请 V 我五十，我传授你通过秘籍🤣')
+				}
+				if(score.value>=15&&score.value<=20){
+					alert('恭喜你，完成挑战，可以找优弧大大领一份贴纸😏');
+					alert('骗你的🤣')
+				}
+				if(score.value>20){
+					alert('太优秀了，这里送你一份惊喜😏')
+					window.location.href='https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b84419b5268f45ce9bb96376c83f69ae~tplv-k3u1fbpfcp-no-mark:320:320:320:320.awebp?'
+				}
+				finishGame();
+			}
+		},1000);
+	}
+	flag = false;
+};
+
+/*结束游戏-清除*/
+function finishGame(){
+	clearInterval(time);
+	for(var i=0;i<_boxs.length;i++){
+		_boxs[i ].innerHTML = '';
+	}
+	flag = true;
+}
+finish.onclick = function(){
+	finishGame();
+	timeout.value = 0;
+	alert('提前结束，您得分为：'+score.value+'分！');
+	if(score.value<5){
+		alert('分太低了，给我重新再来🤣')
+	}
+	if(score.value>=5&&score.value<=10){
+		alert('你小子，摸鱼有两下子');
+	}
+	if(score.value>10){
+		alert('你小子，这里送你一份惊喜😏')
+		window.location.href='https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/154106c862ce441e8d30a704fbb8ace8~tplv-k3u1fbpfcp-watermark.image?'
+	}
+};
+
+/*开始打周边*/
+for(var i=0;i<_boxs.length;i++){
+	_boxs[i ].onclick = function(){
+		if(this.innerHTML!=''){
+			score.value = parseInt(score.value)+1;
+			mouse ++;//击中的地鼠个数
+			var _this = this;
+			this.innerHTML = '<div class="mouse_change"></div>';
+			setTimeout(function(){
+				_this.innerHTML = '';
+			},300)
+		}
+		var lan = ['优弧：你小子','优弧：尊贵的超级会员','优弧：各位臭弟弟','优弧：。。。反正你不会亏','优弧：肯定不是贴纸。我送你贴纸。我不被骂死']
+		if(score.value==4){
+			alert(lan[Math.floor(Math.random()*5)])
+		}
+		if(score.value==8){
+			alert(lan[Math.floor(Math.random()*4)])
+		}
+		if(score.value==12){
+			alert(lan[Math.floor(Math.random()*5)])
+		}
+		if(score.value==16){
+			alert(lan[Math.floor(Math.random()*5)])
+		}
+		if(score.value==20){
+			alert(lan[Math.floor(Math.random()*5)])
+		}
+	}
+}
+</script>
+</html>
